@@ -1,0 +1,31 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ex: <http://example.org/>
+@prefix ns0: <http://www.example.org/about-me#> .
+@prefix ns1: <http://www.example.org/location#> .
+
+ns0:Person a rdfs:Class.
+ns0:Student a rdfs:Class;
+rdfs:subClassOf ns0:Person.
+
+ns0:University a rdfs:Class.
+
+ex:Ritika a ns0:Student;
+  ns0:FullName "Ritika Sharma" ;
+  ns0:birthday "24 Oct" ;
+  ns0:contact <sharmari@tcd.ie> ;
+  ns0:listensto "music" ;
+  ns0:StudiesIn ns0:TrinityCollegeDublin;
+  ns1:country "Ireland" ;
+  ns0:courses <http://example.org/#courses> .
+
+ns0:StudiesIn a rdfs:Property;
+rdfs:domain ns0:University.
+
+ns0:TrinityCollegeDublin a ns0:University;
+ns1:city "Dublin" ;
+ns1:courses <http://example.org/#courses> .
+
+ns1:courses
+rdf:sub1 "Machine Learning" ;
+rdf:sub2 "KDE" .
